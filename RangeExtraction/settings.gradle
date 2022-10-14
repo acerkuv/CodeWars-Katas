@@ -1,2 +1,3 @@
 rootProject.name = 'RangeExtraction'
+include 'CountOfDivs'
 
