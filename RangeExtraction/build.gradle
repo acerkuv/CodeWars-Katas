@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+//    id "io.spring.dependency-management" version "1.0.11.RELEASE"
+    id 'com.github.johnrengelman.shadow' version '7.1.2' //apply false
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+shadowJar {
+    archiveBaseName.set('RangeExtraction')
+    archiveVersion.set('0.1')
+    archiveClassifier.set('')
+    manifest {
+        attributes 'Main-Class': 'org.example.Main'
+    }
+}
+
+tasks.build.dependsOn tasks.shadowJar
